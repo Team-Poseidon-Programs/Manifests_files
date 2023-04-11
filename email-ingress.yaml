@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: email-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/EmailSender/sendEmail
+        pathType: Prefix
+        backend:
+          service:
+            name: email-api-service
+            port:
+              number: 7007

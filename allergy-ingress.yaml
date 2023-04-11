@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: allergy-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Allergy/Fetch
+        pathType: Prefix
+        backend:
+          service:
+            name: allergy-api-service
+            port:
+              number: 7004
+      - path: /api/Allergy/Add
+        pathType: Prefix
+        backend:
+          service:
+            name: allergy-api-service
+            port:
+              number: 7004

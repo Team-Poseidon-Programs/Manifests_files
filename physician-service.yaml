@@ -1,0 +1,12 @@
+##service
+apiVersion: v1
+kind: Service
+metadata:
+  name: physician-api-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: physician-api
+  ports:
+    - targetPort: 80
+      port: 7005

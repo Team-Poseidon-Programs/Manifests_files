@@ -1,0 +1,57 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: audit-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Audit/AddBloodGroup
+        pathType: Prefix
+        backend:
+          service:
+            name: audit-api-service
+            port:
+              number: 7003
+      - path: /api/Audit/AddBloodPressureDiastolic
+        pathType: Prefix
+        backend:
+          service:
+            name: audit-api-service
+            port:
+              number: 7003
+      - path: /api/Audit/AddBloodPressureSystolic
+        pathType: Prefix
+        backend:
+          service:
+            name: audit-api-service
+            port:
+              number: 7003
+      - path: /api/Audit/AddBodyTemperature
+        pathType: Prefix
+        backend:
+          service:
+            name: audit-api-service
+            port:
+              number: 7003
+      - path: /api/Audit/AddHeight
+        pathType: Prefix
+        backend:
+          service:
+            name: audit-api-service
+            port:
+              number: 7003
+      - path: /api/Audit/AddRespiration
+        pathType: Prefix
+        backend:
+          service:
+            name: audit-api-service
+            port:
+              number: 7003
+      - path: /api/Audit/AddWeight
+        pathType: Prefix
+        backend:
+          service:
+            name: audit-api-service
+            port:
+              number: 7003

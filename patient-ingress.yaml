@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: patient-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Patient/Get_all_Patient
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Patient/Get_by_Id
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+     
+ 
+      - path: /api/Patient/patientLogin
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+     
+ 
+
+           

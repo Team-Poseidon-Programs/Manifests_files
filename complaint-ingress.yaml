@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: complaint-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Complaint/getcomplaintbyEmail
+        pathType: Prefix
+        backend:
+          service:
+            name: complaint-api-service
+            port:
+              number: 7008
+      - path: /api/Complaint/GetallCompalins
+        pathType: Prefix
+        backend:
+          service:
+            name: complaint-api-service
+            port:
+              number: 7008
+      - path: /api/Complaint/addComplaint
+        pathType: Prefix
+        backend:
+          service:
+            name: complaint-api-service
+            port:
+              number: 7008

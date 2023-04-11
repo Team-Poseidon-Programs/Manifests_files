@@ -1,0 +1,30 @@
+##deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complaint-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: complaint-api
+  template:
+    metadata:
+      labels:
+        app: complaint-api
+    spec:
+      containers:
+        - name: complaint-api
+          image: poseidon2022/complaintservice
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 80
+    
+

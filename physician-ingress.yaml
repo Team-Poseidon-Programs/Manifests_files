@@ -1,0 +1,45 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: physician-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/PhysicianAvailability/Get_All_Physicians
+        pathType: Prefix
+        backend:
+          service:
+            name: physician-api-service
+            port:
+              number: 7005
+      - path: /api/PhysicianAvailability/FindDoctorByEmailID
+        pathType: Prefix
+        backend:
+          service:
+            name: physician-api-service
+            port:
+              number: 7005
+      - path: /api/PhysicianAvailability/UpdatePhysicianavailability
+        pathType: Prefix
+        backend:
+          service:
+            name: physician-api-service
+            port:
+              number: 7005
+      - path: /api/PhysicianAvailability/DeletephysicianAvailability
+        pathType: Prefix
+        backend:
+          service:
+            name: physician-api-service
+            port:
+              number: 7005
+      - path: /api/PhysicianAvailability/AddPhysicianAvailable
+        pathType: Prefix
+        backend:
+          service:
+            name: physician-api-service
+            port:
+              number: 7005
+     
+     

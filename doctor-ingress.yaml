@@ -1,0 +1,53 @@
+﻿apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: doctor-api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/Doctor/getAll
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 7001
+      - path: /api/Doctor/particular
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 7001
+      - path: /api/Doctor/Add
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 7001
+      - path: /api/DoctorAvailblity/particular
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 7001
+      - path: /api/DoctorAvailblity/Add
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 7001
+      - path: /api/DoctorAvailblity/Update
+        pathType: Prefix
+        backend:
+          service:
+            name: doctor-api-service
+            port:
+              number: 7001
+     
+
+ 
