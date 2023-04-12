@@ -2,11 +2,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: appointment-api-service
+  name: frontend-service
 spec:
   type: LoadBalancer
   selector:
-    app: appointment-api
+    app: frontend
   ports:
     - targetPort: 80
-      port: 7006
+      port: 7010

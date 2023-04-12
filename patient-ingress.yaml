@@ -6,6 +6,20 @@ spec:
   rules:
   - http:
       paths:
+      - path: /api/Patient/Add_Patient
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Patient/Update_Patient
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
       - path: /api/Patient/Get_all_Patient
         pathType: Prefix
         backend:
@@ -13,15 +27,20 @@ spec:
             name: patient-api-service
             port:
               number: 7002
-      - path: /api/Patient/Get_by_Id
+      - path: /api/Patient/Get_by_ID
         pathType: Prefix
         backend:
           service:
             name: patient-api-service
             port:
               number: 7002
-     
- 
+      - path: /api/Patient/PatientExist
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
       - path: /api/Patient/patientLogin
         pathType: Prefix
         backend:
@@ -29,7 +48,87 @@ spec:
             name: patient-api-service
             port:
               number: 7002
-     
- 
-
-           
+      - path: /api/Patient/phoneNo/isExist
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Prescription/AddPrescription
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Prescription/GetPrescriptionById
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Test/AddTest
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Test/GetTestListbyid
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Test/GetTestIdbyname
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Test/UpdateTest
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/Test/DeleteTest
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/VisitDetails/AddVisitDetails
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/VisitDetails/GetVisitDetailsById
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/VisitDetails/GetVisitDetailsByAcceptanceId
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
+      - path: /api/VisitDetails/GetParticularVisitDetailsById
+        pathType: Prefix
+        backend:
+          service:
+            name: patient-api-service
+            port:
+              number: 7002
